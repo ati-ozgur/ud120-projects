@@ -39,6 +39,7 @@ print "pred 10",pred[10]
 print "pred 26",pred[26]
 print "pred 50",pred[50]
 
+print "Chris (1)",sum(pred)
 
 
 from sklearn.metrics import accuracy_score
