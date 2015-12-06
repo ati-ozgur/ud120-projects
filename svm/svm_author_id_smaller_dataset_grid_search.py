@@ -12,6 +12,7 @@ import sys
 from time import time
 sys.path.append("../tools/")
 from email_preprocess import preprocess
+from sklearn.grid_search import GridSearchCV
 
 
 ### features_train and features_test are the features for the training
@@ -35,7 +36,18 @@ labels_train = labels_train[:len(labels_train)/100]
 from sklearn.svm import SVC
 clf = SVC(kernel="rbf")
 
+
+param_grid = [
+  {'C': [1, 10, 100, 1000, 10000], 'kernel': ['rbf']},
+  {'C': [1, 10, 100, 1000, 10000], 'kernel': ['linear']}
+ ]
+
+
+clf = GridSearchCV(SVC(C=1), param_grid, cv=5)
 clf.fit(features_train,labels_train)
+
+print(clf.best_params_)
+
 pred = clf.predict(features_test)
 
 
