@@ -27,4 +27,4 @@ def find_similar_name(full_name):
             if (name in key):
                 name_list.append(key)
 
-    return name_list
+    return set(name_list)
