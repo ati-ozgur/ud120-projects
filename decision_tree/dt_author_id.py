@@ -25,6 +25,9 @@ features_train, features_test, labels_train, labels_test = preprocess()
 #########################################################
 ### your code goes here ###
 
+
+print features_train.shape
+
 from sklearn.tree import DecisionTreeClassifier
 clf = DecisionTreeClassifier(min_samples_split=40)
 
