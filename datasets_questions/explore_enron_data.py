@@ -19,4 +19,12 @@ import pickle
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
 
+def find_similar_name(full_name):
+    name_list = []
+    names = full_name.upper().split()
+    for key in enron_data.keys():
+        for name in names:
+            if (name in key):
+                name_list.append(key)
 
+    return name_list
