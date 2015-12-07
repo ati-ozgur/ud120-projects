@@ -30,8 +30,17 @@ features_train, features_test, labels_train, labels_test = preprocess()
 from sklearn.svm import SVC
 clf = SVC(kernel="linear")
 
+
+t_training = time()
 clf.fit(features_train,labels_train)
+print "training time:", round(time()-t_training, 3), "s"
+
+
+t_testing = time()
 pred = clf.predict(features_test)
+print "testing time:", round(time()-t_testing, 3), "s"
+
+
 
 
 
