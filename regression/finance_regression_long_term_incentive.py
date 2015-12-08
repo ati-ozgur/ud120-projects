@@ -21,7 +21,7 @@ dictionary = pickle.load( open("../final_project/final_project_dataset_modified.
 
 ### list the features you want to look at--first item in the 
 ### list will be the "target" feature
-features_list = ["bonus", "salary"]
+features_list = ["bonus", "long_term_incentive"]
 data = featureFormat( dictionary, features_list, remove_any_zeroes=True)
 target, features = targetFeatureSplit( data )
 
@@ -65,13 +65,7 @@ plt.scatter(feature_test[0], target_test[0], color=test_color, label="test")
 plt.scatter(feature_test[0], target_test[0], color=train_color, label="train")
 
 
-reg_test = linear_model.LinearRegression()
-reg_test.fit(feature_test, target_test)
-print "reg_test coef_",reg_test.coef_
-print "reg_test intercept_",reg_test.intercept_
 
-
-plt.plot(feature_train, reg_test.predict(feature_train), color="y") 
 
 ### draw the regression line, once it's coded
 try:
