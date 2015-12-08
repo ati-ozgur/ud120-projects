@@ -41,17 +41,6 @@ test_score = reg.score(ages_test,net_worths_test)
 print "test_score",test_score
 
 
-plt.plot(ages_test, reg.predict(ages_test), color='brown',linewidth=2)
-
-
-
-
-
-
-
-
-
-
 
 try:
     plt.plot(ages, reg.predict(ages), color="blue")
