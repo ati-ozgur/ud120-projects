@@ -11,3 +11,9 @@ df["exercised_stock_options"].min()
 df["salary"].max()
 df["salary"].min()
 
+
+
+(200000 - df["salary"].min()) / (df["salary"].max())
+
+(1000000 - df["exercised_stock_options"].min()) / (df["exercised_stock_options"].max() - df["exercised_stock_options"].min())
+
