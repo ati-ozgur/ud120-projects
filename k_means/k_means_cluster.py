@@ -11,6 +11,8 @@ import pickle
 import numpy
 import matplotlib.pyplot as plt
 import sys
+from sklearn.cluster import KMeans
+
 sys.path.append("../tools/")
 from feature_format import featureFormat, targetFeatureSplit
 
@@ -65,6 +67,10 @@ plt.show()
 ### cluster here; create predictions of the cluster labels
 ### for the data and store them to a list called pred
 
+estimator = KMeans(n_clusters=2)
+estimator.fit(finance_features)
+
+pred = estimator.predict(finance_features)
 
 
 
