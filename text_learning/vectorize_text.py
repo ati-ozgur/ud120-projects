@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+from __future__ import print_function
 import os
 import pickle
 import re
@@ -50,12 +51,15 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
             ### use parseOutText to extract the text from the opened email
             words = parseOutText(email)
 
-            words = words.replace("sara","")
 
             ### use str.replace() to remove any instances of the words
             ### ["sara", "shackleton", "chris", "germani"]
             for remove_word in ["sara", "shackleton", "chris", "germani"]:
                 words = words.replace(remove_word,"")
+            for remove_word in ["\n","\r"]:
+                words = words.replace(remove_word," ")
+            for remove_word in ["  "]:
+                words = words.replace(remove_word," ")
 
             ### append the text to word_data
             word_data.append(words)
