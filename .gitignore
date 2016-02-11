@@ -12,3 +12,5 @@ my_feature_list.pkl
 *.pdf
 maildir/*
 *.tgz
+*.gz
+
